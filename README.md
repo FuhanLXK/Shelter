@@ -1,3 +1,29 @@
-<h1>Welcome to my Shelter</h1>
+# vue-shelter
 
-<img src="http://www.huafuo.net/static/github/timg.jpg" />
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
