@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-     <Header msg="Welcome to Your Vue.js App"/>
+     <router-view />
   </div>
 </template>
 
 <script>
 import Header from './components/header.vue'
+import Home from './shelter/index/index'
 
 export default {
   name: 'app',
   components: {
-    Header
+    Header,
+    Home
   }
 }
 </script>

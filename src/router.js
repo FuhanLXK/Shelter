@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Header from './components/header'
-import Home from './shelter/index/index'
 
 Vue.use(Router)
 
@@ -10,15 +8,15 @@ Vue.use(Router)
 export default new Router({
     mode:'history',
     routes: [
-      { 
-          path: '/', 
-          name: 'header', 
-          component: Header,
-      },
+    //   { 
+    //       path: '/', 
+    //       name: 'header', 
+    //       component: () => import('./components/header'),
+    //   },
       {
-        path:'/home',
-        name:'home',
-        component:Home
+          path:'/',
+          name:'home',
+          component: () => import('./shelter/index/index')
       }
     ]
   })
