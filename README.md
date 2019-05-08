@@ -1,29 +1,7 @@
-# vue-shelter
+This is a platform I plan to write my own  :-)
 
-## Project setup
-```
-npm install
-```
+Network backpack
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+He can save any online information you want to take with you  :-)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+welcome Shelter
