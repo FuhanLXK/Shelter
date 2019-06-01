@@ -60,36 +60,64 @@
                     </li>
                 </ul>
             </div>
-            <div></div>
+            <div>
+                <div class="video_div">
+                    <!-- <Video :styleVideo="styleCssBalet" /> -->
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-
+import Video from 'video-template-shanavideo'
 import Header from '@/components/header'
+
+
 
 export default {
   name: 'Home',
   data(){
       return{
-          
+          styleCssBalet:{
+            /* link为所有的链接 */
+            link:{
+              videoUrl:'http://www.huafuo.net/static/github/videoscript.mp4', //视频链接
+              playStyle:{
+                 play:'http://www.huafuo.net/static/github/bofang.png',
+                 playWidth:
+                 `
+                    width:30px;
+                    margin:0px 10px;
+                    position: relative;
+                    top:2px;
+                 `
+              }
+            }
+          }
       }
   },
   components:{
-      Header
+      Header,
+      Video
   }
 }
 </script>
 
 <style scoped>
+    .video_div{
+        width: 600px;
+        height: 300px;
+        margin-top: 20px;
+    }
     p{
+        color:#666;
         margin: 0px;
     }
     .home_box_div{
         width: 100%;
         display: flex;
-        margin-top: 2rem;
+        margin-top: 0rem;
         text-align: left;
     }
     .home_left_box{
@@ -108,7 +136,7 @@ export default {
         background-color:#FFF;
         padding: 0.5rem;
         font-size: 14px;
-        border-radius: 5px;
+        border-radius: 3px;
         margin-bottom: 1rem;
         cursor: pointer;
     }

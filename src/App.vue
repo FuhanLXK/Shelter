@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import Header from './components/header.vue'
-import Home from './shelter/index/index'
+// import Header from './components/header.vue'
+// import Home from './shelter/index/index'
 
 export default {
   name: 'app',
   components: {
-    Header,
-    Home
+    // Header,
+    // Home
   }
 }
 </script>
