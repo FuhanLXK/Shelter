@@ -61,6 +61,7 @@
                 </ul>
             </div>
             <div>
+                
                 <div class="video_div">
                     <!-- <Video :styleVideo="styleCssBalet" /> -->
                 </div>
