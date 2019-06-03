@@ -17,6 +17,11 @@ export default new Router({
           path:'/',
           name:'home',
           component: () => import('./shelter/index/index')
+      },
+      {
+          path:'/login',
+          name:'home',
+          component: () => import('./login/login')
       }
     ]
   })

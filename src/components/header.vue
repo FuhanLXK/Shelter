@@ -17,6 +17,10 @@
                 <img src="../assets/icon/APP.png" alt="">
                 <span><router-link to="/home" >下载Shelter App</router-link></span>
             </div>
+            <div class="icon_box_redian">
+                <img src="../assets/icon/APP.png" alt="">
+                <span><router-link to="/login" >登陆</router-link></span>
+            </div>
         </div>
     </div>
   </div>
