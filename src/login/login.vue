@@ -32,9 +32,33 @@ export default {
   },
   methods:{
     loginEventSubmit(){
+
+      function sendAppAxios(){
+        return new Promise(function(resolve, reject) {
+          setTimeout(function () {
+             resolve('隔了三秒返回回来')
+          },3000)
+        })
+      }
+
+      sendAppAxios().then((data) => {
+        console.log(data)
+      })
+
+      // function sendAxiosEvent(){
+      //   return new Promise(function (resolve, reject) {
+      //     request(url, param, resolve, reject);
+      //   })
+      // }
+
+      // sendAxiosEvent('http://localhost:3030/api/user/login','').then(function(data){
+      //     console.log('成功', data)
+      // }, function(err){
+      //     console.log('失败', err)
+      // })
       let data = qs.stringify({username: this.username , password: this.password})
        this.$http.post('http://localhost:3030/api/user/login', data).then((res) => {
-          alert(res);
+          console.log(res);
        }).catch((err) => {
           alert(err);
        });
