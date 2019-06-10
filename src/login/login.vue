@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import qs from 'qs'
+import { loginAddRess } from '@/request/api'
 export default {
   name: 'login',
   data(){
@@ -33,17 +33,17 @@ export default {
   methods:{
     loginEventSubmit(){
 
-      function sendAppAxios(){
-        return new Promise(function(resolve, reject) {
-          setTimeout(function () {
-             resolve('隔了三秒返回回来')
-          },3000)
-        })
-      }
+      // function sendAppAxios(){
+      //   return new Promise(function(resolve, reject) {
+      //     setTimeout(function () {
+      //        resolve('隔了三秒返回回来')
+      //     },3000)
+      //   })
+      // }
 
-      sendAppAxios().then((data) => {
-        console.log(data)
-      })
+      // sendAppAxios().then((data) => {
+      //   console.log(data)
+      // })
 
       // function sendAxiosEvent(){
       //   return new Promise(function (resolve, reject) {
@@ -56,12 +56,18 @@ export default {
       // }, function(err){
       //     console.log('失败', err)
       // })
-      let data = qs.stringify({username: this.username , password: this.password})
-       this.$http.post('http://localhost:3030/api/user/login', data).then((res) => {
-          console.log(res);
-       }).catch((err) => {
-          alert(err);
-       });
+
+      loginAddRess({
+        username:this.username,
+        password:this.password
+      })
+      .then(res => {
+        if(res.code == 200){
+          this.$router.push({
+            path:'/'
+          })
+        }
+      })
     }
   }
 }

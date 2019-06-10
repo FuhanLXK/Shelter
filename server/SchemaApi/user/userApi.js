@@ -10,7 +10,7 @@ const login  = (req, res) => {
   userModel.findUser({username}, (user) => {
     if (!user) {
       res.json({
-        code: 200,
+        code: 201,
         msg: '用户名不存在'
       })
     } else {
@@ -22,7 +22,7 @@ const login  = (req, res) => {
         })
       } else {
         res.json({
-          code: 200,
+          code: 202,
           msg: '密码错误'
         })
       }

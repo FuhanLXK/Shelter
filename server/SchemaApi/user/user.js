@@ -12,6 +12,8 @@ const findUser = (userInfo, callback) => {
 	})
 }
 
+const findAdd = (userInfo )
+
 module.exports = {
 	findUser
 }
