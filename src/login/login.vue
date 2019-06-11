@@ -4,10 +4,10 @@
       <h2>Shelter--你的网络背包</h2>
       <p>发文章，发视频，“快”视频，一切你能想象的东西，尽数在这。欢迎来到Shelter(避难所)</p>
       <div class="login_reinges_box">
-        <div>登陆</div>
-        <div>注册</div>
+        <div @click="loginEventClick">登陆</div>
+        <div @click="registerEventClick">注册</div>
       </div>
-      <div class="login_box_user">
+      <div class="login_box_user" v-if="userStatuser">
         <div class="login_user_account">
           <label>账号：</label><input v-model="username" type="" name="">
         </div>
@@ -16,23 +16,40 @@
         </div>
         <button @click="loginEventSubmit()" class="login_submit_button">登陆</button>
       </div>
+      <div class="login_box_user" v-else>
+        <div class="login_user_account">
+          <label>账号：</label><input v-model="usernames" type="" name="">
+        </div>
+        <div class="login_user_account">
+          <label>密码：</label><input v-model="passwords" type="password" name="">
+        </div>
+        <button @click="registEventSubmit()" class="login_submit_button">注册</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { loginAddRess } from '@/request/api'
+import { loginAddRess , registerAddRess } from '@/request/api'
 export default {
   name: 'login',
   data(){
     return{
       username:null,
-      password:null
+      password:null,
+      userStatuser:true,
+      usernames:null,
+      passwords:null,
     }
   },
   methods:{
+    loginEventClick(){
+      this.userStatuser = true
+    },
+    registerEventClick(){
+      this.userStatuser = false
+    },
     loginEventSubmit(){
-
       // function sendAppAxios(){
       //   return new Promise(function(resolve, reject) {
       //     setTimeout(function () {
@@ -45,18 +62,6 @@ export default {
       //   console.log(data)
       // })
 
-      // function sendAxiosEvent(){
-      //   return new Promise(function (resolve, reject) {
-      //     request(url, param, resolve, reject);
-      //   })
-      // }
-
-      // sendAxiosEvent('http://localhost:3030/api/user/login','').then(function(data){
-      //     console.log('成功', data)
-      // }, function(err){
-      //     console.log('失败', err)
-      // })
-
       loginAddRess({
         username:this.username,
         password:this.password
@@ -67,6 +72,15 @@ export default {
             path:'/'
           })
         }
+      })
+    },
+    registEventSubmit(){
+      registerAddRess({
+        username:this.usernames,
+        password:this.passwords
+      })
+      .then(res => {
+        console.log(res)
       })
     }
   }

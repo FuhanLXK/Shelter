@@ -30,6 +30,30 @@ const login  = (req, res) => {
   })
 }
 
+const register  = (req, res) => {
+  let {username, password,status} = req.body
+
+  userModel.findUser({username}, (user) => {
+    if(user == null){
+      userModel.saveAddUser(req.body, (user) => {
+      })
+      res.json({
+        code:200,
+        msg:'用户创建成功',
+        data:{
+          username:req.body.username
+        }
+      })
+    }else if(user.username == username){
+      res.json({
+        code:201,
+        msg:'用户已存在'
+      })
+    }
+  })
+}
+
 module.exports = {
-	login
+	login,
+  register
 }

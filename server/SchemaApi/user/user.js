@@ -6,14 +6,29 @@ const User = mongoose.model('user',{
 	isLogin:Boolean
 })
 
+//查询
 const findUser = (userInfo, callback) => {
 	User.findOne(userInfo).then((res) => {
 		callback(res)
 	})
 }
 
-const findAdd = (userInfo )
+//新增
+const saveAddUser = (userInfo, callback) => {
+	let newUser = new User({
+		username:userInfo.username,
+		password:userInfo.password
+	})
+	newUser.save()
+}
+// var newUser = new User({
+// 	username:'cangji',
+// 	password:'123456'
+// })
+
+// newUser.save()
 
 module.exports = {
-	findUser
+	findUser,
+	saveAddUser
 }
