@@ -21,12 +21,6 @@ const saveAddUser = (userInfo, callback) => {
 	})
 	newUser.save()
 }
-// var newUser = new User({
-// 	username:'cangji',
-// 	password:'123456'
-// })
-
-// newUser.save()
 
 module.exports = {
 	findUser,
